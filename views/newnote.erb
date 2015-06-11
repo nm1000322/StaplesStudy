@@ -1,0 +1,8 @@
+<h1>Create Note</h1>
+<div class="img">
+  <form method="post" action="/post/create/<%=@id%>" class="form-inline" id="newnote">
+    <input id="input" class="form-control" placeholder="Title" name="name" required >
+    <input type="submit" value="Create Note" class="btn btn-primary">
+  </form>
+  <textarea rows="4" cols="50" name="content" form="newnote" placeholder="Enter note content here"></textarea>
+</div>

@@ -1,0 +1,18 @@
+<h1>Students</h1>
+<table class="table table-responsive table-bordered table-striped">
+  <tr>
+    Student's Name
+    </tr>
+<% @users.each do |user| %>
+
+  <tr>
+  <td>
+    <a href="/user/notes/<%=user.id%>"><h4 class="user"><img class="profile"src="<%=user.picurl%>"><%=user.username%></h4></a>
+  </td>
+  </tr>
+  <%end%>
+</table>
+
+
+
+

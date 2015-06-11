@@ -1,0 +1,27 @@
+<h1><%=@note.title%></h1>
+
+<table class="table table-responsive table-bordered table-striped">
+
+      <tr>
+<td class="content"><%=@note.content%></td>
+      </tr>
+
+
+</table>
+<hr>
+
+<h4>Comments</h4>
+  <% @comments.each do |comment|%>
+    <table class="table table-responsive table-bordered table-striped">
+        <tr>
+          <td><%=User.first(:id => comment.user_id).username %> says:</td>
+        </tr>
+        <tr>
+          <td><%=comment.content%> </td>
+        </tr>
+        <tr><td class="time"><%=comment.date.strftime("Comment posted on %A, %b %d %Y at %l:%M %p") %></td></tr>
+
+</table>
+  <%end%>
+
+<a href="/comment/new/<%= @note.id %>" class=" btn btn-primary">Post a comment</a>

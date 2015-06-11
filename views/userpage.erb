@@ -1,0 +1,21 @@
+<h1><%= @name.username %>'s notes</h1>
+
+<table class="table table-responsive table-bordered table-striped">
+  <tr>
+    <td>
+      <%=@name.username%>'s Notes
+    </td>
+  <td>Created on</td>
+  <td>Class</td>
+
+  </tr>
+  <% @unotes.each do |note|%>
+      <tr>
+        <td>
+        <a href="/note/<%= note.id%>"><%=note.title %></a>
+        </td>
+        <td><%= note.date.strftime("%A, %b %d %Y at %l:%M %p") %></td>
+        <td><%= Course.first(:id => note.course_id).name %></td>
+      </tr>
+  <%end%>
+</table>

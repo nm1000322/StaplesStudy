@@ -1,0 +1,42 @@
+<h1><%= @course.name %> with <%= @course.teacher %></h1>
+
+
+<% #if @layoutuser.in_course(@course)%>
+<form method="post" action="/course/join/<%=@course.id%>">
+  <button  type="submit" class="btn btn-primary" >Join Course</button>
+</form>
+    <a href="/note/new/<%=@course.id%>" class="btn btn-primary">Create a new note</a>
+
+
+<table class="table table-responsive table-bordered table-striped">
+  <tr>
+    <td>
+    Course Notes
+    </td>
+
+  </tr>
+  <% @notes.each do |note|%>
+      <tr>
+        <td>
+    <a href="/note/<%=note.id%>"><%=note.title %></a>
+        </td>
+      <td><%= note.date.strftime("Note created on %A, %b %d %Y at %l:%M %p") %></td>
+      </tr>
+  <%end%>
+</table>
+
+<table class="table table-responsive table-bordered table-striped">
+  <tr>
+    <td>
+      Students in class
+    </td>
+
+  </tr>
+  <% @users.each do |user| %>
+      <tr>
+        <td>
+          <img class="profile" src="<%=user.picurl%>"><a href="/user/notes/<%=user.id%>"><%=user.username%></a>
+        </td>
+      </tr>
+  <%end%>
+</table>

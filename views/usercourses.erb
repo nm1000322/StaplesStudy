@@ -1,0 +1,21 @@
+<h1>My Courses</h1>
+<div class="helpbutton"><button id="help" class="btn btn-primary" onclick="help()"><i class="fa fa-question"></i>
+</button></div>
+<table class="table table-responsive table-bordered table-striped">
+<tr>
+  <td>Course Name</td>
+  <td>Teacher</td>
+</tr>
+  <% @cme.each do |course|%>
+      <tr>
+        <td>
+        <a href="/course/<%=course.id%>"><%=course.name %></a>
+        </td>
+        <td>
+          <%=course.teacher%>
+        </td>
+      </tr>
+  <%end%>
+
+
+</table>

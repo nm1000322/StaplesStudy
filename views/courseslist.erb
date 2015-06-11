@@ -1,0 +1,34 @@
+<h1>All Courses</h1>
+<table class="table table-responsive table-bordered table-striped">
+  <tr>
+    <td>
+     Course Name
+    </td>
+    <td>
+      Teacher
+    </td>
+  </tr>
+
+  <% @course.each do |course| %>
+
+      <tr>
+        <td>
+          <a href="/course/<%=course.id%>"><h4><%=course.name%></h4></a>
+        </td>
+        <td>
+          <%=course.teacher%>
+        </td>
+      </tr>
+  <%end%>
+</table>
+
+<h1>Create Class</h1>
+<div id="newthread">
+  <div class="img">
+  <form method="post" action="/course/create" class="form-inline">
+    <input id="input" class="form-control" placeholder="Name (ex. Biology 1A)" name="name" required >
+    <input class="form-control" placeholder="Teacher" name="teacher"  required>
+    <input  type="submit" value="Create Class" class="btn btn-default">
+  </form>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h1>Comment on the note</h1>
+<div class="img">
+  <textarea rows="4" cols="50" name="content" form="newnote" placeholder="Comement Here"></textarea>
+  <form method="post" action="/comment/create/<%= params[:id] %>" class="form-inline" id="newnote">
+    <input type="submit" value="Post Comment" class="btn btn-primary">
+  </form>
+
+</div>
