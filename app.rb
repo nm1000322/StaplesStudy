@@ -273,3 +273,11 @@ u = User.first(:id => session[:id])
   u.save
   redirect '/landing'
 end
+post '/aboutme' do
+  u = User.first(:id => session[:id])
+  u.aboutme = params[:aboutme]
+  u.save
+  redirect '/landing'
+
+end
+

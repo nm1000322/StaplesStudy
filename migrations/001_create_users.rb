@@ -6,7 +6,7 @@ Sequel.migration do
       String :username
       String :password
       String :picurl
-      String :coursejoin
+      String :aboutme
 
     end
   end

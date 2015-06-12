@@ -47,8 +47,7 @@ h4{
     width: 40px;
     margin-right: 1px;
     margin-top:9px;
-    border: solid;
-    border-color:black;
+    border-radius: 10px;
 
 }
 
@@ -62,4 +61,3 @@ h4{
     border: solid;
     border-color:black;
 }
-
